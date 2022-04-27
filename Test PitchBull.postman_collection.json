@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "51091b8c-cb52-41a7-9df0-75d0a697c49e",
+		"name": "Test PitchBull",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INSERT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ip\":\"127.1.1.1\",\n    \"status\":\"STOP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/server/create",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"server",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateNoRequired",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ip",
+						"value": "ee",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "status",
+						"value": "stop",
+						"type": "text"
+					},
+					{
+						"key": "ip",
+						"value": "teet",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ip\":\"127.1.1.0\",\n    \"status\":\"STOP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/server/updateNoRequired/127.1.1.2?ip=127.1.1.3",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"server",
+						"updateNoRequired",
+						"127.1.1.2"
+					],
+					"query": [
+						{
+							"key": "ip",
+							"value": "127.1.1.3"
+						},
+						{
+							"key": "status",
+							"value": "STop",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRequired",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ip",
+						"value": "ee",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "status",
+						"value": "stop",
+						"type": "text"
+					},
+					{
+						"key": "ip",
+						"value": "teet",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ip\":\"127.1.1.0\",\n    \"status\":\"STOP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/server/updateRequired/127.1.1.2?ip=127.1.1.3&status=start",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"server",
+						"updateRequired",
+						"127.1.1.2"
+					],
+					"query": [
+						{
+							"key": "ip",
+							"value": "127.1.1.3"
+						},
+						{
+							"key": "status",
+							"value": "start"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
